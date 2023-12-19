@@ -130,6 +130,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
+  font-family: 'Montserrat', sans-serif;
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -139,6 +140,7 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: calc(1.3rem + 0.6vw);
+  font-style: italic;
 }
 @media (min-width: 1200px) {
   h3, .h3 {
@@ -486,6 +488,13 @@ progress {
   display: none !important;
 }
 
+.lead.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
@@ -495,11 +504,26 @@ progress {
   font-size: calc(1.625rem + 4.5vw);
   font-weight: 300;
   line-height: 1.2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 @media (min-width: 1200px) {
   .display-1 {
     font-size: 5rem;
   }
+}
+
+.div-avec-vide100 {
+  margin-bottom: 100px; /* ajuste la valeur selon la quantité d'espace souhaitée */
+}
+
+.div-avec-vide60 {
+  margin-bottom: 60px; /* ajuste la valeur selon la quantité d'espace souhaitée */
+}
+
+.div-avec-vide40 {
+  margin-bottom: 40px; /* ajuste la valeur selon la quantité d'espace souhaitée */
 }
 
 .display-2 {
@@ -3161,6 +3185,29 @@ textarea.form-control-lg {
 }
 .fade:not(.show) {
   opacity: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in3{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 3s ease-in-out, transform 1s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.hidden{
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .collapse:not(.show) {

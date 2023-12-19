@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Bare - Start Bootstrap Template</title>
+        <title>Caetano Romain - PORTFOLIO</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -15,36 +15,101 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">Caetano Romain</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Home</a></li>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#sp">School Projects</a></li>
+                                <li><a class="dropdown-item" href="#scp">School Club Projects</a></li>
                             </ul>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#aboutme">About me</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                <h1>A Bootstrap 5 Starter Template</h1>
-                <p class="lead">A complete project boilerplate built with Bootstrap</p>
-                <p>Bootstrap v5.2.3</p>
+                <section id="#home">
+                    <h1 class="fade-in">I am Romain Caetano</h1>
+                    <p class="lead fade-in">I am a futur engineer who will be specialized in Digital Circuit Design, Microprocessor Systems and Hardware Systems.</p>
+                    <p>I want to be the foundation of all future technology.</p>
+                    <div class="row" class="fade-in">
+                        <div class="col-lg-6" class="fade-in">
+                            <!-- Ajoute l'image ici -->
+                            <img src="assets/moi.jpg" class="img-fluid" alt="Ma Photo">
+                        </div>
+                    </div>
+                    <p class="lead  div-avec-vide100"><br>This portfolio will showcase my background and highlight my projects.</p>
+                </section>
             </div>
         </div>
-        <!-- Bootstrap core JS-->
+
+        <div class="container">
+            <div class="text-center mt-5">
+                <section id="#portfolio">
+                    <h1 class="div-avec-vide60"> Portfolio</h1>
+                    <h2 class="fade-in div-avec-vide40" id="#sp">School Projects</h2>
+                    <h3 class="fade-in3 div-avec-vide40"> Design of a Lin Receptor.</h3>
+                    <p class="lead fade-in">During the fourth year of engineering school, I did a Lin Receptor </p>
+                </section>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text-center mt-5">
+                <section id="#aboutme">
+                    <h1>A Bootstrap 5 Starter Template</h1>
+                    <p class="lead">A complete project boilerplate built with Bootstrap</p>
+                    <p>Bootstrap v5.2.3</p>
+                </section>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text-center mt-5">
+                <section id="#contact">
+                    <h1>A Bootstrap 5 Starter Template</h1>
+                    <p class="lead">A complete project boilerplate built with Bootstrap</p>
+                    <p>Bootstrap v5.2.3</p>
+                </section>
+            </div>
+        </div>
+
+        
+        <!-- jQuery for smooth scrolling -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                // Ajoute une animation de défilement à tous les liens à l'intérieur de la barre de navigation
+                $(".navbar-nav a").on('click', function(event) {
+                    // Assure-toi que this.hash a une valeur avant de l'intercepter
+                    if (this.hash !== "") {
+                        // Empêche le comportement par défaut du clic de liens
+                        event.preventDefault();
+
+                        // Stocke la valeur du hachage
+                        var hash = this.hash;
+
+                        // Utilise jQuery pour le défilement fluide
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function(){
+                            // Ajoute le hachage (#) à l'URL lorsque le défilement est terminé
+                            window.location.hash = hash;
+                        });
+                    }
+                });
+            });
+        </script>
+
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
     </body>
 </html>

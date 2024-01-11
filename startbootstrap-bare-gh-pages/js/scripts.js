@@ -29,6 +29,29 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+    let elements = document.querySelectorAll('.lead');
+
+    const showElement = function (element) {
+        element.classList.add('show');
+    };
+    
+
+    const handleIntersection = function (entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                showElement(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
     let elements = document.querySelectorAll('.fade-in3');
 
     const showElement = function (element) {
@@ -79,6 +102,13 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(section);
     });
 
+    const sectionslead = document.querySelectorAll('.lead');
+
+    // Démarre l'observation de chaque section
+    sectionslead.forEach((section) => {
+        observer.observe(section);
+    });
+
     const sectionsToFade2 = document.querySelectorAll('.fade-in3');
 
     // Démarre l'observation de chaque section
@@ -86,4 +116,24 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(section);
     });
 
+});
+
+//Fleche pour remonter
+document.addEventListener("DOMContentLoaded", function() {
+    var scrollToTopButton = document.getElementById("scroll-to-top");
+
+    // Affiche ou masque la flèche en fonction du défilement
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopButton.style.display = "block";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    };
+
+    // Ajoute un événement de clic pour remonter en haut de la page
+    scrollToTopButton.addEventListener("click", function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
 });
